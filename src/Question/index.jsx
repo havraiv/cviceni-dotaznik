@@ -4,8 +4,8 @@ import Option from '../Option/index';
 import './style.css';
 
 const Question = ({ text }) => {
-  const onSelectedOriginal = () => {
-    console.log('Spíše souhlasím.');
+  const handleSelect = () => {
+    setAnswer(true);
   };
   const [answer, setAnswer] = useState(false);
   return (
@@ -18,27 +18,23 @@ const Question = ({ text }) => {
         <Option
           type="smileyStrongYes"
           text="Souhlasím"
-          onSelected={onSelectedOriginal}
+          onSelected={handleSelect}
         />
         <Option
           type="smileyYes"
           text="Spíše souhlasím"
-          onSelected={onSelectedOriginal}
+          onSelected={handleSelect}
         />
-        <Option
-          type="smileyNeutral"
-          text="Nevím"
-          onSelected={onSelectedOriginal}
-        />
+        <Option type="smileyNeutral" text="Nevím" onSelected={handleSelect} />
         <Option
           type="smileyNo"
           text="Spíše nesouhlasím"
-          onSelected={onSelectedOriginal}
+          onSelected={handleSelect}
         />
         <Option
           type="smileyStrongNo"
           text="Nesouhlasím"
-          onSelected={onSelectedOriginal}
+          onSelected={handleSelect}
         />
       </div>
     </div>
