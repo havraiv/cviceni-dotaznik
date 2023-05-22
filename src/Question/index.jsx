@@ -7,7 +7,7 @@ const Question = ({ text }) => {
   const handleSelect = () => {
     setAnswer(true);
   };
-  const [answer, setAnswer] = useState(false);
+  const [answer, setAnswer] = useState('symbolQuestion');
   return (
     <div className="question">
       <QuestionBody
