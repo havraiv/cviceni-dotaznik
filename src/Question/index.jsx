@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import QuestionBody from '../QuestionBody/index';
 import Option from '../Option/index';
 import './style.css';
 
 const Question = ({ text }) => {
+  const [answer, setAnswer] = useState(false);
   return (
     <div className="question">
       <QuestionBody iconType="symbolQuestion" text={text} />
