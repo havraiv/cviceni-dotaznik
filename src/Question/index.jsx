@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import QuestionBody from '../QuestionBody/index';
 import Option from '../Option/index';
 import './style.css';
-// Zařiďte následující: pokud je ve stavu answered hodnota false, chceme, aby componenta QuestionBody měla ikonku symbolQuestion. Pokud je stav true, chceme, aby typ ikonky byl symbolTick.
+
 const Question = ({ text }) => {
+  const onSelectedOriginal = () => {
+    console.log('Spíše souhlasím.');
+  };
   const [answer, setAnswer] = useState(false);
   return (
     <div className="question">
@@ -12,11 +15,31 @@ const Question = ({ text }) => {
         text={text}
       />
       <div className="question__options">
-        <Option type="smileyStrongYes" text="Souhlasím" />
-        <Option type="smileyYes" text="Spíše souhlasím" />
-        <Option type="smileyNeutral" text="Nevím" />
-        <Option type="smileyNo" text="Spíše nesouhlasím" />
-        <Option type="smileyStrongNo" text="Nesouhlasím" />
+        <Option
+          type="smileyStrongYes"
+          text="Souhlasím"
+          onSelected={onSelectedOriginal}
+        />
+        <Option
+          type="smileyYes"
+          text="Spíše souhlasím"
+          onSelected={onSelectedOriginal}
+        />
+        <Option
+          type="smileyNeutral"
+          text="Nevím"
+          onSelected={onSelectedOriginal}
+        />
+        <Option
+          type="smileyNo"
+          text="Spíše nesouhlasím"
+          onSelected={onSelectedOriginal}
+        />
+        <Option
+          type="smileyStrongNo"
+          text="Nesouhlasím"
+          onSelected={onSelectedOriginal}
+        />
       </div>
     </div>
   );

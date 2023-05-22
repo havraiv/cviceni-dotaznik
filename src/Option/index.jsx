@@ -2,9 +2,9 @@ import React from 'react';
 import Icon from '../Icon/index';
 import './style.css';
 
-const Option = ({ type, text }) => {
+const Option = ({ type, text, onSelected }) => {
   return (
-    <div className="option" onClick={() => console.log('Spíše souhlasím.')}>
+    <div className="option" onClick={onSelected}>
       <Icon type={type} />
       <div>{text}</div>
     </div>
