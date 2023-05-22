@@ -4,7 +4,7 @@ import './style.css';
 
 const Option = ({ type, text, onSelected }) => {
   return (
-    <div className="option" onClick={onSelected}>
+    <div className="option" onClick={onSelected(type)}>
       <Icon type={type} />
       <div>{text}</div>
     </div>
